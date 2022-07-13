@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form'
 import { VscArrowRight } from "react-icons/vsc";
 import { LoginUser } from '../Api/user';
+import {BiLoaderCircle} from 'react-icons/bi'
 
 const usernameConfig = {
     required: true,
@@ -14,9 +15,9 @@ const LoginForm = () => {
         formState: { errors }
     } = useForm()
 
-    const [ loading, setLoading ] = useState(false);
+    const [loading, setLoading] = useState(false);
 
-    const onSubmit = async ({username}) => {
+    const onSubmit = async ({ username }) => {
         setLoading(true);
         const [error, user] = await LoginUser(username);
         console.log('Error: ', error);
@@ -47,10 +48,10 @@ const LoginForm = () => {
                         placeholder='What´s your name?'
                         type="text" {...register("username", usernameConfig)} />
 
-                    <button type='submit' disabled={ loading }><VscArrowRight /></button>
+                    <button type='submit' disabled={loading}><VscArrowRight /></button>
+                    {loading && <h2>Logging in <BiLoaderCircle/> </h2>}
+                    {errorMessage}
                 </fieldset>
-                { loading && <p>Logging in...</p>}
-                { errorMessage }
             </form>
         </>
     )
