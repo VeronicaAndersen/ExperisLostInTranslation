@@ -1,0 +1,7 @@
+.header {
+    background-color: #7DBA84;
+    display: flex;
+    justify-content: center;
+    font-size: large;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
