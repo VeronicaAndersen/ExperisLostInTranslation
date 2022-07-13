@@ -1,7 +1,22 @@
+:root{
+    --primary: #7DBA84;
+    --secondary: #c6464e;
+    --shadow: rgb(149 157 165 / 0.8) 0px 8px 24px;
+}
+*{
+    margin: 0;
+}
+body{
+    background-image: url('/images/gecko.svg');
+}
 .header {
-    background-color: #7DBA84;
+    background-color: var(--primary);
     display: flex;
     justify-content: center;
     font-size: large;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 80px;
+    line-height: 80px;
+    box-shadow: var(--shadow);
+    
 }
