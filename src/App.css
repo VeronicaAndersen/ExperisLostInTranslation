@@ -1,22 +1,53 @@
-:root{
+:root {
     --primary: #7DBA84;
     --secondary: #c6464e;
     --shadow: rgb(149 157 165 / 0.8) 0px 8px 24px;
 }
-*{
+
+* {
     margin: 0;
 }
-body{
+
+body {
     background-image: url('/images/gecko.svg');
 }
+
 .header {
     background-color: var(--primary);
     display: flex;
     justify-content: center;
     font-size: large;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     min-height: 80px;
     line-height: 80px;
     box-shadow: var(--shadow);
-    
+}
+
+fieldset {
+    width: 350px;
+    height: 60px;
+    margin: 20px auto auto;
+    box-shadow: rgb(149 157 165 / 0.8) 0px 8px 24px;
+    background-color: var(--primary);
+    border: none;
+    border-bottom: var(--secondary) 10px solid;
+    border-radius: 10px;
+    line-height: 60px;
+}
+
+input {
+    border: none;
+    height: 30px;
+    width: 200px;
+    border-radius: 30px;
+    padding: 5px 10px;
+}
+
+button {
+    background-color: var(--secondary);
+    border: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    line-height: 30px;
 }
