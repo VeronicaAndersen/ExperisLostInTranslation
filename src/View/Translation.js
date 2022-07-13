@@ -1,8 +1,12 @@
+import TranslationSearch from '../Components/Translation/TranslationSearch';
+import TranslationSquare from '../Components/Translation/TranslationSquare';
+
 const Translation = () => {
 
     return (
         <>
-            <h1> Translation </h1>
+            <TranslationSearch />
+            <TranslationSquare />
         </>
     )
 }

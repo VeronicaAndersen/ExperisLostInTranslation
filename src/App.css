@@ -1,7 +1,7 @@
 :root {
     --primary: #7DBA84;
     --secondary: #c6464e;
-    --shadow: rgb(149 157 165 / 0.8) 0px 8px 24px;
+    --shadow: rgba(77, 83, 88, 0.8) 0px 8px 24px;
 }
 
 * {
@@ -52,5 +52,35 @@ button {
     height: 30px;
     width: 30px;
     border-radius: 20px;
-    line-height: 30px;
+}
+.TranslationSearchHeader{
+    width: 100%;
+    height: 100px;
+    background-color: var(--primary);
+    box-shadow: var(--shadow);
+}
+.TranslationSearch{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    line-height: 100px;
+}
+.TranslationSquare{
+    background-color: var(--primary);
+    width: 600px;
+    height: 250px;
+    box-shadow: var(--shadow);
+    margin: 20px auto auto;
+    border-bottom: var(--secondary) solid 40px;
+    border-radius: 20px;
+    position: relative;
+}
+#translation{
+    background-color: rgb(219, 219, 219);
+    padding: 5px;
+    border-radius: 20px;
+    position: absolute;
+    bottom: -32px;
+    left: 16px;
+    font-size: 12px;
 }
