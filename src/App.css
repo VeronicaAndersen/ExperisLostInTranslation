@@ -15,7 +15,7 @@ body{
     justify-content: center;
     font-size: large;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    height: 80px;
+    min-height: 80px;
     line-height: 80px;
     box-shadow: var(--shadow);
     

@@ -1,4 +1,5 @@
 import './App.css';
+import NavBar from './Components/NavBar/NavBar';
 import Login from './View/Login';
 import Translation from './View/Translation';
 import Profile from './View/Profile';
@@ -8,9 +9,7 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
-      <header className = "header">
-        <h1>Lost in Translation</h1>
-      </header>
+      <NavBar />
       <Routes>
         <Route path='/' element={<Login />}/>
         <Route path='/translation' element={<Translation />}/>
