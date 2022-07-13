@@ -22,7 +22,10 @@ body {
     line-height: 80px;
     box-shadow: var(--shadow);
 }
-
+.validateLogin{
+    font-size: 12px;
+    color: #c6464e;
+}
 fieldset {
     width: 350px;
     height: 60px;

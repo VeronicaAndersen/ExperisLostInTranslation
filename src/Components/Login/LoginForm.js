@@ -23,11 +23,11 @@ const LoginForm = () => {
         }
 
         if (errors.username.type === "required") {
-            return <span>Username is required</span>
+            return <span className='validateLogin'> *Username is required</span>
         }
 
         if (errors.username.type === "minLength") {
-            return <span>Username is too short. Requires a minimum of three characters.</span>
+            return <span className='validateLogin'> *Username is too short. Requires a minimum of three characters.</span>
         }
     })()
 
