@@ -6,6 +6,7 @@ import { BiLoaderCircle } from 'react-icons/bi'
 import { StorageSave } from '../../Utils/Storage';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
+import { STORAGE_KEY_USER } from '../../const/StorageKeys';
 
 const usernameConfig = {
     required: true,
@@ -37,7 +38,7 @@ const LoginForm = () => {
             setApiError(error)
         }
         if (userResponse !== null) {
-            StorageSave("translate-user", userResponse)
+            StorageSave(STORAGE_KEY_USER, userResponse)
             setUser(userResponse)
         }
         setLoading(false);

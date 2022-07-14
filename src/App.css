@@ -26,14 +26,14 @@ body {
     line-height: 80px;
     box-shadow: var(--shadow);
 }
-#profileLink{
-    position: absolute;
+#profileLink, #translateLink{
+    display: absolute;
     right: 20px;
     text-decoration: none;
     color: var(--secondary);
     padding: 0 20px;
 }
-#profileLink:hover{
+#profileLink:hover, #translateLink:hover{
     background-color: #6c9972;
     font-weight: 700;
 }
@@ -69,6 +69,7 @@ button {
     width: 30px;
     border-radius: 20px;
     box-shadow: var(--shadow);
+    margin-left: -40px;
 }
 button:hover{
     background-color: #ac3f46;
