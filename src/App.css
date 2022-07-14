@@ -27,16 +27,16 @@ body {
     box-shadow: var(--shadow);
 }
 #profileLink, #translateLink{
-    display: absolute;
-    right: 20px;
+    margin-right: 0;
     text-decoration: none;
     color: var(--secondary);
-    padding: 0 20px;
+    padding: 30px 20px;
 }
+
 #profileLink:hover, #translateLink:hover{
     background-color: #6c9972;
     font-weight: 700;
-}
+} 
 .validateLogin{
     font-size: 12px;
     color: #c6464e;
@@ -83,14 +83,18 @@ button:hover{
     padding: 5px;
     height: 40px;
     right: 0;
+    top: 80px;
 }
 #deleteHistoryBtn{
     width: 100px;
     border-radius: 5px;
     margin: 20px;
-    padding: 5px;
+    padding: 7px;
     height: 40px;
     background-color: var(--third);
+}
+#deleteHistoryBtn:hover{
+    background-color: #6c3fa7;
 }
 #historySquare{
     max-width: 600px;
@@ -116,4 +120,7 @@ button:hover{
     bottom: -32px;
     left: 16px;
     font-size: 12px;
+}
+li{
+    list-style: decimal;
 }
