@@ -4,7 +4,7 @@ const TranslationSearch = () => {
     return (<>
         <fieldset>
             <input
-                placeholder='Search something'
+                placeholder='Translate something'
                 type="text" />
 
             <button type='submit'><VscArrowRight /></button>

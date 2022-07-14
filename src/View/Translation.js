@@ -1,4 +1,4 @@
-import TranslationSearch from '../Components/Translation/TranslationSearch';
+import TranslationSearch from '../Components/Translation/TranslationInput';
 import TranslationSquare from '../Components/Translation/TranslationSquare';
 
 const Translation = () => {
