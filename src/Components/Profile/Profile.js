@@ -1,14 +1,13 @@
-// import { useUser } from "react"
 
 
-// const Profile = () => {
-//     const { user } = useUser ();
+
+
+const Profile = () => {
     
-//     return (
-//         <>
-//             <ProfileHeader username={ user.username }/>
-//             <ProfileAction />
-//             <PrfileTranslateHistory translations={ user.translations }/>
-//         </>
-//     )
-// }
+
+    return (
+        <>
+            
+        </>
+    )
+}
