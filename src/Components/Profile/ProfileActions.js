@@ -1,12 +1,18 @@
 import { BiLogOut } from 'react-icons/bi';
 import { AiOutlineDelete } from 'react-icons/ai';
+import { StorageSave } from '../../Utils/Storage';
+import { STORAGE_KEY_USER } from '../../const/StorageKeys';
+import { useUser } from '../../context/UserContext';
 
-const ProfileActions = ({logout}) => {
+const ProfileActions = () => {
+
+    const { setUser } = useUser();
 
     const handleLogout = () => {
         if (window.confirm('Are you sure?')) {
-            // Send evemt to parent.
-            logout();
+            // Send event to parent.
+            StorageSave(STORAGE_KEY_USER, null);
+            setUser(null);
         }
     }
 
