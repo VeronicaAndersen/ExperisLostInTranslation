@@ -68,12 +68,13 @@ button {
 .TranslationSquare{
     background-color: var(--primary);
     width: 600px;
-    height: 250px;
+    height: 200px;
     box-shadow: var(--shadow);
     margin: 20px auto auto;
     border-bottom: var(--secondary) solid 40px;
     border-radius: 20px;
     position: relative;
+    padding: 20px;
 }
 #translation{
     background-color: rgb(219, 219, 219);
