@@ -4,7 +4,8 @@ import { VscArrowRight } from "react-icons/vsc";
 import { LoginUser } from '../Api/user';
 import { BiLoaderCircle } from 'react-icons/bi'
 import { StorageSave } from '../../Utils/Storage';
-//import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useUser } from '../../context/UserContext';
 
 const usernameConfig = {
     required: true,
@@ -12,6 +13,8 @@ const usernameConfig = {
 };
 const LoginForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm()
+    const {user, setUser } = useUser();
+    const navigate = useNavigate();
 
     //Local state
     const [loading, setLoading] = useState(false);
@@ -19,27 +22,29 @@ const LoginForm = () => {
 
     //Side effects
     useEffect(() => {
-        // if (user) {
-        //     //redirect
-        // }
-    }, [] ) //Empty dependencies, will only run once
+        if (user !== null){
+            navigate("/profile");
+        }
+    }, [user, navigate] ) //Empty dependencies, will only run once
 
 
 
     //Event handlers
     const onSubmit = async ({ username }) => {
         setLoading(true);
-        const [error, user] = await LoginUser(username);
+        const [error, userResponse] = await LoginUser(username);
         if (error !== null) {
             setApiError(error)
         }
-        if (user !== null) {
-            StorageSave("translate-user", user)
+        if (userResponse !== null) {
+            StorageSave("translate-user", userResponse)
+            setUser(userResponse)
         }
         setLoading(false);
 
     }
 
+    
     //Render functions
     const errorMessage = (() => {
         if (!errors.username) {
