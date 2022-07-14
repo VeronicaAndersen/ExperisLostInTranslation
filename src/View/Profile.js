@@ -6,11 +6,18 @@ import ProfileActions from '../Components/Profile/ProfileActions';
 import ProfileHeader from '../Components/Profile/ProfileHeader';
 import ProfileTranslateHistory from '../Components/Profile/ProfileTranslateHistory';
 import { useUser } from '../context/UserContext';
+import { StorageSave } from '../Utils/Storage';
+import { STORAGE_KEY_USER } from '../const/StorageKeys';
 
 
 const Profile = () => {
 
-    const { user } = useUser()
+    const { user, setUser } = useUser();
+
+    const logout = () => {
+        StorageSave(STORAGE_KEY_USER, null);
+        setUser(null);
+    }
 
     return (
         <>
@@ -21,7 +28,7 @@ const Profile = () => {
             </div>
         
             <ProfileHeader username={ user.username }/>
-            <ProfileActions />
+            <ProfileActions logout={ logout } />
             <ProfileTranslateHistory translations={ user.translations }/>
         </>
     )
