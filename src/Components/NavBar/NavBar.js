@@ -12,7 +12,7 @@ const NavBar = ( {username} ) => {
                 <h1>Lost in Translation</h1>
                 { user !== null && 
                     <div>
-                        <NavLink id="translateLink"to="/translate"> Translate</NavLink>
+                        <NavLink id="translateLink"to="/translation"> Translate</NavLink>
                         <NavLink id="profileLink" to="/profile"><VscAccount/> {user.username} </NavLink>
                     </div>
                 }
