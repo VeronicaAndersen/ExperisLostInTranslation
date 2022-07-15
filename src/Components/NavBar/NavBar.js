@@ -13,7 +13,7 @@ const NavBar = ( {username} ) => {
                 { user !== null && 
                     <div>
                         <NavLink id="translateLink"to="/translate"> Translate</NavLink>
-                        <NavLink id="profileLink" to="/profile" username={user.username}><VscAccount/> {user.username} </NavLink>
+                        <NavLink id="profileLink" to="/profile"><VscAccount/> {user.username} </NavLink>
                     </div>
                 }
             </header>
