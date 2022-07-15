@@ -2,7 +2,8 @@ import { NavLink } from "react-router-dom";
 import {VscAccount} from 'react-icons/vsc'
 import { useUser } from '../../context/UserContext';
 
-const NavBar = () => {
+
+const NavBar = ( {username} ) => {
     const { user } = useUser()
 
     return (
@@ -12,7 +13,7 @@ const NavBar = () => {
                 { user !== null && 
                     <div>
                         <NavLink id="translateLink"to="/translate"> Translate</NavLink>
-                        <NavLink id="profileLink" to="/profile"><VscAccount/> Profile</NavLink>
+                        <NavLink id="profileLink" to="/profile" username={user.username}><VscAccount/> {user.username} </NavLink>
                     </div>
                 }
             </header>

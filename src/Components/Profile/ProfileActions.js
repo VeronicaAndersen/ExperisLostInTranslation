@@ -16,10 +16,16 @@ const ProfileActions = () => {
         }
     }
 
+    const handleDelete = () => {
+        if (window.confirm('Do you want to clear your history?')) {
+            
+        }
+    }
+
     return (
         <span>
             <button id="logoutBtn" onClick={handleLogout}>Log out <BiLogOut /></button>
-            <button id="deleteHistoryBtn">Delete history <AiOutlineDelete /></button>
+            <button id="deleteHistoryBtn">Clear history <AiOutlineDelete /></button>
         </span>
 
     )
