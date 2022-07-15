@@ -1,10 +1,19 @@
+
+import TranslationSquare from '../Components/Profile/TranslationSquare';
+import withAuth from '../Hoc/withAuth';
+import ProfileActions from '../Components/Profile/ProfileActions';
+
 const Profile = () => {
 
     return (
         <>
-            <h1> Profile </h1>
+            <div id='historySquare'>
+                <TranslationSquare />
+            </div>
+            <ProfileActions />
+            
         </>
     )
 }
 
-export default Profile;
+export default withAuth(Profile);

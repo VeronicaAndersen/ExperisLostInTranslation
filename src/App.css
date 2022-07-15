@@ -3,6 +3,7 @@
 :root {
     --primary: #7DBA84;
     --secondary: #c6464e;
+    --third: #7a52ad;
     --shadow: rgba(77, 83, 88, 0.8) 0px 8px 24px;
 }
 
@@ -25,6 +26,17 @@ body {
     line-height: 80px;
     box-shadow: var(--shadow);
 }
+#profileLink, #translateLink{
+    margin-right: 0;
+    text-decoration: none;
+    color: var(--secondary);
+    padding: 30px 20px;
+}
+
+#profileLink:hover, #translateLink:hover{
+    background-color: #6c9972;
+    font-weight: 700;
+} 
 .validateLogin{
     font-size: 12px;
     color: #c6464e;
@@ -40,28 +52,66 @@ fieldset {
     border-radius: 10px;
     line-height: 60px;
 }
+#keyboard{
+    position: absolute;
+    margin-top: 22px;
+    margin-left: 10px;
+}
 
 input {
     border: none;
     height: 30px;
     width: 300px;
     border-radius: 30px;
-    padding: 5px 10px;
+    padding: 5px 10px 5px 40px;
 }
 
 button {
+    cursor: pointer;
     background-color: var(--secondary);
     border: none;
     height: 30px;
     width: 30px;
     border-radius: 20px;
+    box-shadow: var(--shadow);
+    margin-left: -40px;
+}
+button:hover{
+    background-color: #ac3f46;
+}
+
+#logoutBtn{
+    position: absolute;
+    width: 100px;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 5px;
+    height: 40px;
+    right: 0;
+    top: 80px;
+}
+#deleteHistoryBtn{
+    width: 100px;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 7px;
+    height: 40px;
+    background-color: var(--third);
+}
+#deleteHistoryBtn:hover{
+    background-color: #6c3fa7;
+}
+#historySquare{
+    max-width: 600px;
+    margin: auto auto;
 }
 .TranslationSquare{
     background-color: var(--primary);
-    width: 600px;
-    height: 200px; 
+    max-width: 600px;
+    min-height: 200px; 
+    height: fit-content;
     box-shadow: var(--shadow);
-    margin: 20px auto auto;
+    margin: 80px auto auto;
     border-bottom: var(--secondary) solid 40px;
     border-radius: 20px;
     position: relative;
@@ -75,4 +125,7 @@ button {
     bottom: -32px;
     left: 16px;
     font-size: 12px;
+}
+li{
+    list-style: decimal;
 }
