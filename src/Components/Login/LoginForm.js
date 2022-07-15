@@ -7,6 +7,7 @@ import { StorageSave } from '../../Utils/Storage';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
 import { STORAGE_KEY_USER } from '../../const/StorageKeys';
+import { BsKeyboard } from 'react-icons/bs';
 
 const usernameConfig = {
     required: true,
@@ -65,6 +66,7 @@ const LoginForm = () => {
 
             <form onSubmit={handleSubmit(onSubmit)}>
                 <fieldset>
+                    <BsKeyboard id='keyboard'/>
                     <input
                         placeholder='What´s your name?'
                         type="text" {...register("username", usernameConfig)} />
