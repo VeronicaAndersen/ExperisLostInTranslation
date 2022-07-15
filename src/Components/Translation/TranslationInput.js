@@ -25,7 +25,7 @@ const TranslationSearch = () => {
 
         for (let i = 0; i < string.length; i++) {
             if(string[i] !== " ") {
-                imageArray.push(<img src={"signs/" + string[i] + ".png"} alt={string[i]} key={i} />);
+                imageArray.push(<img className="sign-img" src={"signs/" + string[i] + ".png"} alt={string[i]} key={i} />);
             }
         }
             setImageList(imageArray);
@@ -49,7 +49,6 @@ const TranslationSearch = () => {
         </fieldset>
         </form>
     </>)
-
 }
 
 export default TranslationSearch;
