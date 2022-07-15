@@ -6,8 +6,6 @@ import { BiLoaderCircle } from 'react-icons/bi'
 import { StorageSave } from '../../Utils/Storage';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
-import { STORAGE_KEY_USER } from '../../const/StorageKeys';
-import { BsKeyboard } from 'react-icons/bs';
 
 const usernameConfig = {
     required: true,
@@ -25,7 +23,7 @@ const LoginForm = () => {
     //Side effects
     useEffect(() => {
         if (user !== null){
-            navigate("/profile");
+            navigate("/translation");
         }
     }, [user, navigate] ) //Empty dependencies, will only run once
 
@@ -39,7 +37,7 @@ const LoginForm = () => {
             setApiError(error)
         }
         if (userResponse !== null) {
-            StorageSave(STORAGE_KEY_USER, userResponse)
+            StorageSave("translate-user", userResponse)
             setUser(userResponse)
         }
         setLoading(false);
@@ -66,7 +64,6 @@ const LoginForm = () => {
 
             <form onSubmit={handleSubmit(onSubmit)}>
                 <fieldset>
-                    <BsKeyboard id='keyboard'/>
                     <input
                         placeholder='What´s your name?'
                         type="text" {...register("username", usernameConfig)} />
