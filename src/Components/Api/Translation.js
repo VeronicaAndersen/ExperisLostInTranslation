@@ -1,14 +1,25 @@
 import { createHeaders } from "."
+import { STORAGE_KEY_USER } from "../../const/StorageKeys"
+import { storageRead, StorageSave } from "../../Utils/Storage"
 
 const apiUrl = process.env.REACT_APP_API_URL
 
-export const addTranslation = async (user, translation) => {
+
+const user = storageRead(STORAGE_KEY_USER)
+
+const translations = user.translations
+
+export const addTranslation = async (translation) => {
+    translations.push(translation)
+    user.translations = translations
+    StorageSave(STORAGE_KEY_USER, user)
+
     try {
         const response = await fetch(`${apiUrl}/${user.id}`, {
             method: "PATCH",
             headers: createHeaders(),
             body: JSON.stringify({
-                translations: [...user.translations, translation]
+                translations: translations
             })
 
         })

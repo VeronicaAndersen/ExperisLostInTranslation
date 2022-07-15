@@ -20,7 +20,7 @@ const TranslationSearch = () => {
     
     const handleTranslationSave = async (notes) => {
 
-        const [error, result] = await addTranslation(user, notes)
+        const [error, result] = await addTranslation(notes)
     }
 
     const Translate = (string) => {
