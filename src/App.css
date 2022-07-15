@@ -129,3 +129,6 @@ button:hover{
 li{
     list-style: decimal;
 }
+.sign-img{
+    width: 60px;
+}
