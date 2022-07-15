@@ -6,9 +6,9 @@ const Translation = () => {
     return (
         <>
             <TranslationSearch />
-            <TranslationSquare />
         </>
     )
 }
+//TranslationSquare
 
 export default Translation;

@@ -1,13 +1,13 @@
-import SignImage from "./SignImage";
+// import SignImage from "./SignImage";
 
 
-const TranslationSquare = () => {
-    return (<>
-        <div className="TranslationSquare">
+// const TranslationSquare = () => {
+//     return (<>
+//         <div className="TranslationSquare">
 
-            <SignImage array="aab"></SignImage>
-            <div id="translation">Translation</div>
-        </div>
-    </>)
-}
-export default TranslationSquare;
+//             <SignImage array="aab"></SignImage>
+//             <div id="translation">Translation</div>
+//         </div>
+//     </>)
+// }
+// export default TranslationSquare;
