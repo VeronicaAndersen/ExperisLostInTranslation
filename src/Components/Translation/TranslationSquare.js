@@ -5,7 +5,6 @@
 //     return (<>
 //         <div className="TranslationSquare">
 
-//             <SignImage array="aab"></SignImage>
 //             <div id="translation">Translation</div>
 //         </div>
 //     </>)

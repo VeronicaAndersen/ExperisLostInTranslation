@@ -18,13 +18,15 @@ const TranslationSearch = () => {
         let imageArray = [];
         string = string.toLowerCase();
 
-        if (!/^[a-z]*$/g.test(string)){
+        if (!/^[a-z ]*$/g.test(string)){
             alert("Translation denied. Only letters ranging a-z are currently supported.")
             return;
         }
 
         for (let i = 0; i < string.length; i++) {
-            imageArray.push(<img src={"signs/" + string[i] + ".png"} alt={string[i]} key={i} />);
+            if(string[i] !== " ") {
+                imageArray.push(<img src={"signs/" + string[i] + ".png"} alt={string[i]} key={i} />);
+            }
         }
             setImageList(imageArray);
     }
@@ -37,8 +39,12 @@ const TranslationSearch = () => {
                 type="text" {...register("string", usernameConfig)} />
 
             <button type='submit'><VscArrowRight /></button>
+                <div className="TranslationSquare">
 
-            <div>{imageList}</div>
+                    <div>{imageList}</div>
+
+             <div id="translation">Translation</div>
+         </div>
 
         </fieldset>
         </form>
