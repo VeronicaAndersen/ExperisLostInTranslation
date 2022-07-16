@@ -50,3 +50,17 @@ export const LoginUser = async username => {
 
 }
 
+export const userById = async (userId) => {
+    try {
+        const response = await fetch(`${apiURL}/${userId}`);
+
+        if (!response) {
+            throw new Error('Could not fetch user!');
+        }
+        const user = await response.json();
+        return [null, user];
+
+    } catch (error) {
+        return [error.message, null]
+    }
+}

@@ -1,12 +1,13 @@
 import { BiLogOut } from 'react-icons/bi';
 import { AiOutlineDelete } from 'react-icons/ai';
-import { storageDelete } from '../../Utils/Storage';
+import { storageDelete, StorageSave } from '../../Utils/Storage';
 import { STORAGE_KEY_USER } from '../../const/StorageKeys';
 import { useUser } from '../../context/UserContext';
+import { translationClearHistory } from '../Api/Translation';
 
 const ProfileActions = () => {
 
-    const { setUser } = useUser();
+    const { user, setUser } = useUser();
 
     const handleLogout = () => {
         if (window.confirm('Are you sure?')) {
@@ -16,16 +17,32 @@ const ProfileActions = () => {
         }
     }
 
-    const handleDelete = () => {
-        if (window.confirm('Do you want to clear your history?')) {
-            
+    const handleClearHistory = async () => {
+
+        if (!window.confirm('Are you sure?\n This can´t be undone!')) {
+            return
         }
+
+        const [ clearError ] = await translationClearHistory(user.id);
+
+        if (clearError !== null) {
+            //Do something about this
+            return
+        }
+
+        const updatedUser = {
+            ...user,
+            translations: []
+        }
+
+        StorageSave( updatedUser );
+        setUser( updatedUser );
     }
 
     return (
         <span>
-            <button id="logoutBtn" onClick={handleLogout}>Log out <BiLogOut /></button>
-            <button id="deleteHistoryBtn">Clear history <AiOutlineDelete /></button>
+            <button id="logoutBtn" onClick={ handleLogout }>Log out <BiLogOut /></button>
+            <button id="deleteHistoryBtn" onClick={ handleClearHistory }>Clear history <AiOutlineDelete /></button>
         </span>
 
     )

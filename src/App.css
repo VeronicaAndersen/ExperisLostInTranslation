@@ -125,10 +125,12 @@ button:hover{
     bottom: -32px;
     left: 16px;
     font-size: 12px;
+    height: 18px;
+    line-height: 18px;
 }
 li{
     list-style: decimal;
 }
 .sign-img{
-    width: 60px;
+    width: 40px;
 }
