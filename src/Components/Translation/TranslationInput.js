@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { VscArrowRight } from 'react-icons/vsc'
 import { useForm } from 'react-hook-form'
 import { addTranslation } from '../Api/Translation';
+import { BsKeyboard } from 'react-icons/bs';
 
 const usernameConfig = {
     maxLength: 40,
@@ -34,24 +35,27 @@ const TranslationSearch = () => {
         setImageList(imageArray);
     }
 
-    return (<>
+    return (
+    <>
         <form onSubmit={handleSubmit(onSubmit)}>
             <fieldset>
+            <BsKeyboard className='keyboard'/>
                 <input
                     placeholder='Translate something'
                     type="text" {...register("string", usernameConfig)} />
 
                 <button type='submit'><VscArrowRight /></button>
-                <div className="TranslationSquare">
-
-                    <div>{imageList}</div>
-
-                    <div id="translation">Translation</div>
-                </div>
-
             </fieldset>
+
+            <div className="TranslationSquare">
+
+                <div>{imageList}</div>
+
+                <div id="translation">Translation</div>
+            </div>
         </form>
-    </>)
+    </>
+    )
 }
 
 export default TranslationSearch;
