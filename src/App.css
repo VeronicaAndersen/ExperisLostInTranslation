@@ -93,6 +93,9 @@ button {
 button:hover {
     background-color: #ac3f46;
 }
+.test{
+    text-align: center;
+}
 
 #logoutBtn {
     position: absolute;
@@ -109,6 +112,7 @@ button:hover {
     width: 100px;
     border-radius: 5px;
     margin: 20px;
+    margin-left: 550px;
     padding: 7px;
     height: 40px;
     background-color: var(--third);

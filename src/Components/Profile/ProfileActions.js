@@ -40,10 +40,10 @@ const ProfileActions = () => {
     }
     // Buttons created for Logout & clear history.
     return (
-        <span>
+        <div className='test'>
             <button id='logoutBtn' onClick={handleLogout}>Log out <BiLogOut /></button>
             <button id='deleteHistoryBtn' onClick={handleClearHistory}>Clear history <AiOutlineDelete /></button>
-        </span>
+        </div>
 
     )
 }
