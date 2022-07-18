@@ -19,7 +19,7 @@ const ProfileActions = () => {
 
     const handleClearHistory = async () => {
 
-        if (!window.confirm('Are you sure?\n This can´t be undone!')) {
+        if (!window.confirm('Are you sure? \nThis can´t be undone!')) {
             return
         }
         
