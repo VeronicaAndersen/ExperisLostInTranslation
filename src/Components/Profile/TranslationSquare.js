@@ -1,16 +1,16 @@
-import { useUser } from '../../context/UserContext';
-import ProfileTranslateHistory from './ProfileTranslateHistory';
+import { useUser } from '../../context/UserContext'
+import ProfileTranslateHistory from './ProfileTranslateHistory'
 
 const TranslationSquare = () => {
 
-    const { user } = useUser();
+    const { user } = useUser()
 
     return (
-    <>
-        <div className="TranslationSquare">
-            <ProfileTranslateHistory translations={ user.translations }/>
-        </div>
-    </>
+        <>
+            <div className="TranslationSquare">
+                <ProfileTranslateHistory translations={user.translations} />
+            </div>
+        </>
     )
 
 }
