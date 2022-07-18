@@ -1,12 +1,12 @@
-import UserProvider from "./UserContext";
+import UserProvider from './UserContext'
 
-const AppContext = ({children}) => {
+const AppContext = ({ children }) => {
 
     return (
         <UserProvider>
-        { children }
+            {children}
         </UserProvider>
     )
 }
 
-export default AppContext;
+export default AppContext

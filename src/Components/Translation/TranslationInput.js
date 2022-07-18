@@ -1,66 +1,68 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import { VscArrowRight } from 'react-icons/vsc'
 import { useForm } from 'react-hook-form'
-import { addTranslation } from '../Api/Translation';
-import { useUser } from '../../context/UserContext';
+import { addTranslation } from '../Api/Translation'
+import { BsKeyboard } from 'react-icons/bs'
 
-const usernameConfig = {
+//Config for translation (ie. max amount of characters allowed in one translation)
+const translationConfig = {
     maxLength: 40,
-};
+}
 
 const TranslationSearch = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm(); 
-    const {user} = useUser();                                               
+    const { register, handleSubmit } = useForm()
+    const [imageList, setImageList] = useState([])
+    const [errorMessage, setErrorMessage] = useState([])
 
-    const [imageList, setImageList] = useState([]);
+    const Translate = ({ string }) => {
 
-    const onSubmit = ({ string }) => {
-        Translate(string); 
-    }   
-    
-    const handleTranslationSave = async (notes) => {
+        let imageArray = []
 
-        const [error, result] = await addTranslation(notes)
-    }
-
-    const Translate = (string) => {
-
-        let imageArray = [];
-
-        if (!/^[a-zA-Z ]*$/g.test(string)){
-            alert("Translation denied. Only letters ranging a-z are currently supported.")
-            return;
+        const errorMessage = (message) => {
+            if (message === 'regexFail') {
+                setErrorMessage(<span className='validateLogin'>*Translation denied. Only letters ranging a-z are currently supported.</span>)
+            }
+            //Add more error messages here if needed
+        }
+        //regex only allowing letters and space
+        if (!/^[a-zA-Z ]*$/g.test(string)) {
+            return errorMessage('regexFail')
         }
 
-        handleTranslationSave(string);
-        string = string.toLowerCase();
 
+        addTranslation(string)
+        string = string.toLowerCase()
+
+        //Adds every characters image to the array of images
         for (let i = 0; i < string.length; i++) {
-            if(string[i] !== " ") {
-                imageArray.push(<img className="sign-img" src={"signs/" + string[i] + ".png"} alt={string[i]} key={i} />);
+            if (string[i] !== " ") {
+                imageArray.push(<img className='sign-img' src={'signs/' + string[i] + '.png'} alt={string[i]} key={i} />)
             }
         }
-            setImageList(imageArray);
+        setImageList(imageArray)
     }
 
-    return (<>
-        <form onSubmit={handleSubmit(onSubmit)}>
-        <fieldset>
-            <input
-                placeholder='Translate something'
-                type="text" {...register("string", usernameConfig)} />
+    return (
+        <>
+            <form onSubmit={handleSubmit(Translate)}>
+                <fieldset>
+                    <BsKeyboard className='keyboard' />
+                    <input
+                        placeholder='Translate something'
+                        type="text" {...register("string", translationConfig)} />
+                    <button type='submit'><VscArrowRight /></button>
+                    {errorMessage}
+                </fieldset>
 
-            <button type='submit'><VscArrowRight /></button>
                 <div className="TranslationSquare">
 
                     <div>{imageList}</div>
 
-             <div id="translation">Translation</div>
-         </div>
-
-        </fieldset>
-        </form>
-    </>)
+                    <div id="translation">Translation</div>
+                </div>
+            </form>
+        </>
+    )
 }
 
-export default TranslationSearch;
+export default TranslationSearch

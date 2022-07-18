@@ -52,7 +52,7 @@ fieldset {
     border-radius: 10px;
     line-height: 60px;
 }
-#keyboard{
+.keyboard{
     position: absolute;
     margin-top: 22px;
     margin-left: 10px;

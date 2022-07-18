@@ -6,6 +6,7 @@ import { BiLoaderCircle } from 'react-icons/bi'
 import { StorageSave } from '../../Utils/Storage';
 import { useNavigate } from 'react-router-dom';
 import { useUser } from '../../context/UserContext';
+import { BsKeyboard } from 'react-icons/bs';
 
 const usernameConfig = {
     required: true,
@@ -64,6 +65,7 @@ const LoginForm = () => {
 
             <form onSubmit={handleSubmit(onSubmit)}>
                 <fieldset>
+                    <BsKeyboard className='keyboard'/>
                     <input
                         placeholder='What´s your name?'
                         type="text" {...register("username", usernameConfig)} />
