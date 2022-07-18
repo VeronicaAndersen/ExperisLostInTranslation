@@ -153,3 +153,20 @@ li {
 .sign-img {
     width: 40px;
 }
+
+/* ___________________________ Styling footer _______________________________ */
+.footer {
+    background-color: var(--secondary);
+    width: 100vw;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    line-height: 30px;
+    text-align: center;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #000;
+    margin: 10px;
+}

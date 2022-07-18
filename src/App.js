@@ -1,5 +1,6 @@
 import './App.css'
 import NavBar from './Components/NavBar/NavBar'
+import Footer from './Components/Footer/Footer'
 import Login from './View/Login'
 import Translation from './View/Translation'
 import Profile from './View/Profile'
@@ -15,6 +16,7 @@ function App() {
           <Route path='/translation' element={<Translation />} />
           <Route path='/profile' element={<Profile />} />
         </Routes>
+        <Footer/>
       </div>
     </BrowserRouter>
 
