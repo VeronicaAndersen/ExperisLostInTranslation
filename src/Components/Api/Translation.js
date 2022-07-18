@@ -7,10 +7,10 @@ const apiUrl = process.env.REACT_APP_API_URL
 
 const user = storageRead(STORAGE_KEY_USER)
 
-let translations = () => ( user.translations === null ? translations = []: translations = user.translations)
+const translations = user.translations;
 
-export const addTranslation = async (translation) => {
-    translations.push(translation)
+export const addTranslation = async (translationAdded) => {
+    translations.push(translationAdded)
     user.translations = translations
     StorageSave(STORAGE_KEY_USER, user)
 
