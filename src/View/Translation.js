@@ -9,6 +9,5 @@ const Translation = () => {
         </>
     )
 }
-//TranslationSquare
 
 export default withAuth(Translation);

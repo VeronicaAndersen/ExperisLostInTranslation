@@ -7,7 +7,7 @@ const UserContext = createContext()
 
 //Here it exposes it
 export const useUser = () => {
-    return useContext(UserContext) //{user, setUser}
+    return useContext(UserContext)
 }
 
 
