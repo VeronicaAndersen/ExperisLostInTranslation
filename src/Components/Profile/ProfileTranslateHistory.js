@@ -5,14 +5,15 @@ const ProfileTranslateHistory = ({ translations }) => {
         return <li> {translation}</li>
     }
 
+    //Adds index to translations so that multiple translations of the same sentence will be able to show in history
     const translateList = translations.map(
-        (translation, index) => <ProfileTranslateHistoryItem key={ index + ' - ' + translation } translation={ translation }/>);
+        (translation, index) => <ProfileTranslateHistoryItem key={index + ' - ' + translation} translation={translation} />)
 
     return (
         <section>
             <h3>Translate History</h3>
             <ul>
-                { translateList }
+                {translateList}
             </ul>
         </section>
     )

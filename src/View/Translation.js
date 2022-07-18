@@ -1,5 +1,5 @@
-import TranslationSearch from '../Components/Translation/TranslationInput';
-import withAuth from '../Hoc/withAuth';
+import TranslationSearch from '../Components/Translation/TranslationInput'
+import withAuth from '../Hoc/withAuth'
 
 const Translation = () => {
 
@@ -10,4 +10,4 @@ const Translation = () => {
     )
 }
 
-export default withAuth(Translation);
+export default withAuth(Translation)
