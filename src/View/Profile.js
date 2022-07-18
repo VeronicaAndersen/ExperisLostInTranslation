@@ -22,7 +22,7 @@ const Profile = () => {
 
     return (
         <>
-            <div id='historySquare'>
+            <div>
                 <TranslationSquare />
             </div>
             <ProfileActions />

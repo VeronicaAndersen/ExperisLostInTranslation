@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap');
 
+/* __________________________ Sets colors globally ______________________________ */
 :root {
     --primary: #7DBA84;
     --secondary: #c6464e;
@@ -7,15 +8,18 @@
     --shadow: rgba(77, 83, 88, 0.8) 0px 8px 24px;
 }
 
+/* _______________________ Styling for the whole page ____________________________ */
 * {
     margin: 0;
 }
 
+/* _____________________________ Styling for body _________________________________ */
 body {
     background-image: url('/images/gecko.svg');
     background-size: 300px;
 }
 
+/* ____________________________ Styling for header ________________________________ */
 .header {
     background-color: var(--primary);
     display: flex;
@@ -26,21 +30,28 @@ body {
     line-height: 80px;
     box-shadow: var(--shadow);
 }
-#profileLink, #translateLink{
+
+#profileLink,
+#translateLink {
     margin-right: 0;
     text-decoration: none;
     color: var(--secondary);
     padding: 30px 20px;
 }
 
-#profileLink:hover, #translateLink:hover{
+#profileLink:hover,
+#translateLink:hover {
     background-color: #6c9972;
     font-weight: 700;
-} 
-.validateLogin{
+}
+
+/* __________________________ Styling for validations _____________________________ */
+.validate {
     font-size: 12px;
     color: #c6464e;
 }
+
+/* _________________________ Styling for Input fielsets ___________________________ */
 fieldset {
     width: 350px;
     height: 60px;
@@ -52,7 +63,8 @@ fieldset {
     border-radius: 10px;
     line-height: 60px;
 }
-.keyboard{
+
+.keyboard {
     position: absolute;
     margin-top: 22px;
     margin-left: 10px;
@@ -66,6 +78,7 @@ input {
     padding: 5px 10px 5px 40px;
 }
 
+/* _____________________________ Styling for buttons _______________________________ */
 button {
     cursor: pointer;
     background-color: var(--secondary);
@@ -76,11 +89,12 @@ button {
     box-shadow: var(--shadow);
     margin-left: -40px;
 }
-button:hover{
+
+button:hover {
     background-color: #ac3f46;
 }
 
-#logoutBtn{
+#logoutBtn {
     position: absolute;
     width: 100px;
     border-radius: 5px;
@@ -90,7 +104,8 @@ button:hover{
     right: 0;
     top: 80px;
 }
-#deleteHistoryBtn{
+
+#deleteHistoryBtn {
     width: 100px;
     border-radius: 5px;
     margin: 20px;
@@ -98,17 +113,17 @@ button:hover{
     height: 40px;
     background-color: var(--third);
 }
-#deleteHistoryBtn:hover{
+
+#deleteHistoryBtn:hover {
     background-color: #6c3fa7;
 }
-#historySquare{
-    max-width: 600px;
-    margin: auto auto;
-}
-.TranslationSquare{
+
+/* __________________________ Styling translationSquare _____________________________ */
+
+.TranslationSquare {
     background-color: var(--primary);
     max-width: 600px;
-    min-height: 200px; 
+    min-height: 200px;
     height: fit-content;
     box-shadow: var(--shadow);
     margin: 80px auto auto;
@@ -117,7 +132,8 @@ button:hover{
     position: relative;
     padding: 20px;
 }
-#translation{
+
+#translation {
     background-color: rgb(219, 219, 219);
     padding: 5px;
     border-radius: 20px;
@@ -128,9 +144,12 @@ button:hover{
     height: 18px;
     line-height: 18px;
 }
-li{
+
+li {
     list-style: decimal;
 }
-.sign-img{
+
+/* ___________________________ Styling sign images _______________________________ */
+.sign-img {
     width: 40px;
 }
