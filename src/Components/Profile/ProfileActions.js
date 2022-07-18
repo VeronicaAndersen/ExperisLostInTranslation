@@ -22,27 +22,26 @@ const ProfileActions = () => {
         if (!window.confirm('Are you sure?\n This can´t be undone!')) {
             return
         }
+        
 
-        const [ clearError ] = await translationClearHistory(user.id);
+        const [clearError] = await translationClearHistory(user.id);
 
         if (clearError !== null) {
             //Do something about this
             return
         }
-
         const updatedUser = {
             ...user,
             translations: []
         }
-
-        StorageSave( updatedUser );
-        setUser( updatedUser );
+        StorageSave(STORAGE_KEY_USER, updatedUser);
+        setUser(updatedUser);
     }
 
     return (
         <span>
-            <button id="logoutBtn" onClick={ handleLogout }>Log out <BiLogOut /></button>
-            <button id="deleteHistoryBtn" onClick={ handleClearHistory }>Clear history <AiOutlineDelete /></button>
+            <button id="logoutBtn" onClick={handleLogout}>Log out <BiLogOut /></button>
+            <button id="deleteHistoryBtn" onClick={handleClearHistory}>Clear history <AiOutlineDelete /></button>
         </span>
 
     )

@@ -2,14 +2,12 @@ import { createHeaders } from "."
 import { STORAGE_KEY_USER } from "../../const/StorageKeys"
 import { storageRead, StorageSave } from "../../Utils/Storage"
 
-const apiUrl = process.env.REACT_APP_API_URL
-
-
-const user = storageRead(STORAGE_KEY_USER)
-
-const translations = user.translations;
+const apiUrl = process.env.REACT_APP_API_URL;
 
 export const addTranslation = async (translationAdded) => {
+    const user = storageRead(STORAGE_KEY_USER)
+let translations = user.translations;
+    
     translations.push(translationAdded)
     user.translations = translations
     StorageSave(STORAGE_KEY_USER, user)
@@ -36,19 +34,19 @@ export const addTranslation = async (translationAdded) => {
 }
 
 export const translationClearHistory = async (userId) => {
-
     try {
-        const response = await fetch(`${apiUrl}/${user.id}`,{
+        const response = await fetch(`${apiUrl}/${userId}`,{
             method: "PATCH",
             headers: createHeaders(),
             body:JSON.stringify({
                 translations: []
             })
-        })
+        })   
         if (!response.ok) {
             throw new Error('Couldn´t update translations');
         }
         const result = await response.json();
+
         return[null, result];
 
     } catch (error) {
@@ -56,4 +54,5 @@ export const translationClearHistory = async (userId) => {
         return [error.message, null];
 
     }
+    
 }
